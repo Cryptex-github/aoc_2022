@@ -5,30 +5,27 @@ pub fn part_one(_input: &str) -> Option<u32> {
 pub fn part_two(input: &str) -> Option<u32> {
     let [mut current, mut prev, mut biggest, mut sec_biggest, mut third_biggest] = [0_u32; 5];
 
-    input
-        .lines()
-        .chain(std::iter::once(""))
-        .for_each(|e| {
-            if !e.is_empty() {
-                current += e.parse::<u32>().unwrap();
-            } else {
-                if current > biggest {
-                    biggest = current;
-                }
-
-                if current > sec_biggest && current < biggest {
-                    sec_biggest = current;
-                }
-
-                if current > third_biggest && current < sec_biggest {
-                    third_biggest = current;
-                }
-
-                prev = current;
-                current = 0;
+    input.lines().chain(std::iter::once("")).for_each(|e| {
+        if !e.is_empty() {
+            current += e.parse::<u32>().unwrap();
+        } else {
+            if current > biggest {
+                biggest = current;
             }
-        });
-    
+
+            if current > sec_biggest && current < biggest {
+                sec_biggest = current;
+            }
+
+            if current > third_biggest && current < sec_biggest {
+                third_biggest = current;
+            }
+
+            prev = current;
+            current = 0;
+        }
+    });
+
     Some(biggest + sec_biggest + third_biggest)
 }
 

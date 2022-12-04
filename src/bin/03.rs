@@ -24,7 +24,9 @@ pub fn part_one(input: &str) -> Option<u32> {
 
         for c in f.chars() {
             if s.contains(c) {
-                let priority = char_to_priority.get(&c.to_ascii_lowercase()).expect("Character not in mapping.");
+                let priority = char_to_priority
+                    .get(&c.to_ascii_lowercase())
+                    .expect("Character not in mapping.");
 
                 if c.is_ascii_uppercase() {
                     total_pri += priority + 26;
@@ -47,7 +49,9 @@ pub fn part_two(input: &str) -> Option<u32> {
     for [x, y, z] in input.lines().array_chunks::<3>() {
         for c in x.chars() {
             if y.contains(c) && z.contains(c) {
-                let priority = char_to_priority.get(&c.to_ascii_lowercase()).expect("Character not in mapping.");
+                let priority = char_to_priority
+                    .get(&c.to_ascii_lowercase())
+                    .expect("Character not in mapping.");
 
                 if c.is_ascii_uppercase() {
                     total_pri += priority + 26;
@@ -57,7 +61,7 @@ pub fn part_two(input: &str) -> Option<u32> {
                 break;
             }
         }
-    };
+    }
 
     Some(total_pri)
 }
