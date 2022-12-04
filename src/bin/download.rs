@@ -1,7 +1,3 @@
-/*
- * This file contains template code.
- * There is no need to edit this file unless you want to change template functionality.
- */
 use std::io::Write;
 use std::path::PathBuf;
 use std::{env::temp_dir, io, process::Command};

@@ -1,12 +1,5 @@
-/*
- * This file contains template code.
- * There is no need to edit this file unless you want to change template functionality.
- * Prefer `./helpers.rs` if you want to extract code from your solutions.
- */
 use std::env;
 use std::fs;
-
-pub mod helpers;
 
 pub const ANSI_ITALIC: &str = "\x1b[3m";
 pub const ANSI_BOLD: &str = "\x1b[1m";

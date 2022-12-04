@@ -1,7 +1,3 @@
-/*
- * This file contains template code.
- * There is no need to edit this file unless you want to change template functionality.
- */
 use advent_of_code::{ANSI_BOLD, ANSI_ITALIC, ANSI_RESET};
 use std::process::Command;
 
