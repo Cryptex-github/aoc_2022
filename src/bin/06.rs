@@ -1,4 +1,15 @@
-use std::collections::{HashSet, VecDeque};
+use std::collections::VecDeque;
+
+// What I would do if I can do it differently
+fn _get_unique(input: &str, n: usize) -> Option<u32> {
+    for (i, slice) in input.chars().collect::<Vec<_>>().windows(n).enumerate() {
+        if !(1..n).any(|i| slice[i..].contains(&slice[i - 1])) {
+            return Some((i + n) as u32);
+        }
+    }
+
+    None
+}
 
 fn get_unique(input: &str, n: usize) -> Option<u32> {
     let mut queue = VecDeque::with_capacity(n);
