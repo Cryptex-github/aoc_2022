@@ -4,3 +4,6 @@ download = "run --bin download -- "
 
 solve = "run --bin"
 all = "run"
+
+[build]
+rustflags = ["-C", "target-cpu=native"]

@@ -11,3 +11,6 @@ publish = false
 pico-args = "0.5.0"
 relative-path = "1"
 ahash = "0"
+
+[profile.release]
+lto = "fat"
